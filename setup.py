@@ -45,7 +45,8 @@ _deps = [
     "bitsandbytes>=0.43.0",
     "black==23.1.0",
     "datasets>=2.18.0",
-    "deepspeed==0.12.2",
+    "deepspeed==0.14.4",
+    "wandb==0.17.3",
     "einops>=0.6.1",
     "evaluate==0.4.0",
     "flake8>=6.0.0",
@@ -64,9 +65,8 @@ _deps = [
     "sentencepiece>=0.1.99",
     "scipy",
     "tensorboard",
-    "torch==2.1.2",
-    "transformers>=4.39.3",
-    "trl>=0.8.2",
+    "transformers==4.41.2",
+    "trl==0.8.2",
     "jinja2>=3.0.0",
     "tqdm>=4.64.1",
 ]
@@ -86,7 +86,7 @@ def deps_list(*pkgs):
 
 extras = {}
 extras["tests"] = deps_list("pytest", "parameterized")
-extras["torch"] = deps_list("torch")
+# extras["torch"] = deps_list("torch")
 extras["quality"] = deps_list("black", "isort", "flake8")
 extras["docs"] = deps_list("hf-doc-builder")
 extras["dev"] = extras["docs"] + extras["quality"] + extras["tests"]
